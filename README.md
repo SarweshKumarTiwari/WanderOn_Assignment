@@ -43,27 +43,19 @@ Before you begin, ensure you have the following installed on your system:
 
    Make sure to replace `your-database-name` with the name of your MongoDB database.
 
-5. **Start the server**
+6. **Go  to frontend directory**
 
    ```bash
-   npm run dev
-   ```
-
-   This command will start the Node.js server.
-
-6. **Go back to main project directory**
-
-   ```bash
-   cd..
+   cd frontend
    npm install
    ```
-5. **Start the client server**
+5. **Start both servers**
 
    ```bash
-   npm start
+   npm run devstart
    ```
-
-   This command will start the React.js server.
+   
+   This command will start the Node.js server and React.js server.
 
 ## Accessing the Application
 

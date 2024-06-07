@@ -43,13 +43,21 @@ Before you begin, ensure you have the following installed on your system:
 
    Make sure to replace `your-database-name` with the name of your MongoDB database.
 
-6. **Go  to frontend directory**
+5. **Go  to frontend directory**
 
    ```bash
    cd frontend
    npm install
    ```
-5. **Start both servers**
+
+5. **Now go to main directory**
+
+   ```bash
+   cd ..
+   npm install
+   ```
+
+7. **Start both servers**
 
    ```bash
    npm run devstart

@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios, { AxiosError } from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../context/UserContext';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +13,8 @@ const Register = () => {
   const [strong, setstrong] = useState(false)
   const [error, setError] = useState('');
   const [showPassword, setshowPassword] = useState(false)
+  const navigate=useNavigate();
+  const {setisLogged}=useContext(UserContext)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
@@ -40,7 +44,8 @@ const Register = () => {
       }, {
         withCredentials: true
       });
-
+      setisLogged(true);
+      navigate('/dashboard')
       console.log('Registration successful', response.data);
     } catch (error) {
       if (error instanceof AxiosError)
